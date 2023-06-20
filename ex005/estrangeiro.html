@@ -7,22 +7,26 @@
 </head>
 <body>
 
-    <h1>Sistema de checagem de nacionalidade</h1>
-
+    <h1>verifique sua nacionalidade</h1>
+    <p>Insira seu país de origem abaixo: </p>
     <input type="text" name="nacionalidade" id="inacionalidade">
-    <input type="submit" value="Checar!" onclick="checar()">
-    <div id="res"></div>
+    <input type="submit" value="Verificar" onclick="verificar()">
+    <div id="res" >Resultado</div>
 
     <script>
-        var nacao  = window.document.querySelector(`input#inacionalidade`)
-        var res = window.document.querySelector(`div#res`)
-        var nacionalide = Text(nacao.value)
-
-
-
-        function checar() {
-
+        function verificar() {
+        var pais = document.getElementById('inacionalidade')
+        var res = document.getElementById('res')
+       res.innerHTML = (`Seus país de origem é ${pais.value}`)
+        if (pais.value != 'Brasil') {
+            res.innerHTML += (`<p>Você é Estrangeiro</p>`)
+        } else {
+            res.innerHTML += (`<p>Você é Brasileiro</p>`)
         }
+    }
+
+
+
     </script>
     
 </body>
