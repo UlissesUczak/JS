@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,7 +12,7 @@
       Insira a letra no campo abaixo para descobrir se é vogal ou consoante.
     </p>
 
-    <input type="text" name="letras" id="iletras" />
+    <input type="text" name="letras" id="iletras" maxlength="1" />
     <button type="submit" onclick="verificar()">Verificar</button>
     <div id="res"></div>
 
@@ -21,10 +21,16 @@
         var alfabeto = window.document.getElementById("iletras");
         var res = window.document.getElementById("res");
         res.innerHTML = `A letra ${alfabeto.value} é uma `;
-        if (alfabeto.value != 'a' || 'e' || 'i' || 'o' || 'u') {
-          res.innerHTML += `<strong>consoante</strong>`;
-        } else if (alfabeto.value != 'b' || 'c' || 'd' || 'f' || 'g' || 'h' || 'j' || 'k' || 'l' || 'm' || 'n' || 'p' || 'q' || 'r' || 's' || 't' || 'v' || 'x' || 'w' || 'y' || 'z'){
+        if (
+          alfabeto.value == "a" ||
+          alfabeto.value == "e" ||
+          alfabeto.value == "i" ||
+          alfabeto.value == "o" ||
+          alfabeto.value == "u"
+        ) {
           res.innerHTML += `<strong>vogal</strong>`;
+        } else {
+          res.innerHTML += `<strong>consoante</strong>`;
         }
       }
     </script>
