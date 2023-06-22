@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vogal ou Consoante</title>
+  </head>
+  <body>
+    <h1>Descubra se é vogal ou consoante</h1>
+
+    <p>
+      Insira a letra no campo abaixo para descobrir se é vogal ou consoante.
+    </p>
+
+    <input type="text" name="letras" id="iletras" />
+    <button type="submit" onclick="verificar()">Verificar</button>
+    <div id="res"></div>
+
+    <script>
+      function verificar() {
+        var alfabeto = window.document.getElementById("iletras");
+        var res = window.document.getElementById("res");
+        res.innerHTML = `A letra ${alfabeto.value} é uma `;
+        if (alfabeto.value != 'a' || 'e' || 'i' || 'o' || 'u') {
+          res.innerHTML += `<strong>consoante</strong>`;
+        } else if (alfabeto.value != 'b' || 'c' || 'd' || 'f' || 'g' || 'h' || 'j' || 'k' || 'l' || 'm' || 'n' || 'p' || 'q' || 'r' || 's' || 't' || 'v' || 'x' || 'w' || 'y' || 'z'){
+          res.innerHTML += `<strong>vogal</strong>`;
+        }
+      }
+    </script>
+  </body>
+</html>
