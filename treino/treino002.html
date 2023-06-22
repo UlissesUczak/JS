@@ -8,9 +8,9 @@
   <body>
     <h1>Faculdade Aprove</h1>
 
-    <input type="number" name="notas" id="inotas1" step="0.1" />
-    <input type="number" name="notas" id="inotas2" step="0.1" />
-    <input type="number" name="notas" id="inotas3" step="0.1" />
+    <input type="number" name="notas" id="inotas1" step="0.1" max="10.0" />
+    <input type="number" name="notas" id="inotas2" step="0.1" max="10.0"/>
+    <input type="number" name="notas" id="inotas3" step="0.1" max="10.0"/>
     <button type="submit" onclick="calculate()">Verificar Média</button>
     <div id="resultado">Resultado:</div>
 
@@ -19,15 +19,15 @@
         var nota1 = window.document.getElementById("inotas1");
         var nota2 = window.document.getElementById("inotas2");
         var nota3 = window.document.getElementById("inotas3");
-        var resultadoFinal = window.document.getElementById("resultado");
-        var res = (parselFloat(nota1.value) + parselFloat(nota2.value) + parselFloat(nota3.value)) / 3;
+        var resultadoAtual = window.document.getElementById("resultado");
+        var res = (parseFloat(nota1.value) + parseFloat(nota2.value) + parseFloat(nota3.value)) / 3;
 
         if (res > 7) {
-          resultadoFinal.innerHTML =
-            "sua nota foi " + res.toFixed(1) + ", parabéns, você passou";
+          resultadoAtual.innerHTML =
+            "sua nota foi " + res.toFixed(1) + ", parabéns, você foi <strong>aprovado</strong>";
         } else {
-          resultadoFinal.innerHTML =
-            "sua nota foi " + res.toFixed(1) +", você foi reprovado, precisa estudar mais";
+          resultadoAtual.innerHTML =
+            "sua nota foi " + res.toFixed(1) +", você foi <strong>reprovado</strong>, precisa estudar mais";
         }
       }
     </script>
