@@ -1,35 +1,80 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nota de aluno</title>
-  </head>
-  <body>
-    <h1>Faculdade Aprove</h1>
 
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nota de aluno</title>
+
+  <style>
+    * {
+      margin: 0px;
+      padding: 0px;
+
+    }
+
+    h1 {
+      text-align: center;
+      padding: 20px;
+    }
+
+    div#inputs > input {
+      margin: auto;
+      display: grid;
+      width: 100px;
+      margin-bottom: 10px;
+    }
+
+    div#resultado {
+      margin: auto;
+      display: grid;
+      width: 100px;
+      margin: 100px;
+
+    }
+    
+    button {
+      margin: auto;
+      display: grid;
+    }
+
+
+
+  </style>
+
+
+
+
+</head>
+
+<body>
+  <h1>Faculdade Aprove</h1>
+
+  <div id="inputs">
     <input type="number" name="notas" id="inotas1" step="0.1" max="10.0" />
-    <input type="number" name="notas" id="inotas2" step="0.1" max="10.0"/>
-    <input type="number" name="notas" id="inotas3" step="0.1" max="10.0"/>
+    <input type="number" name="notas" id="inotas2" step="0.1" max="10.0" />
+    <input type="number" name="notas" id="inotas3" step="0.1" max="10.0" />
     <button type="submit" onclick="calculate()">Verificar Média</button>
-    <div id="resultado">Resultado:</div>
+  </div>
+  <div id="resultado">Resultado:</div>
 
-    <script>
-      function calculate() {
-        var nota1 = window.document.getElementById("inotas1");
-        var nota2 = window.document.getElementById("inotas2");
-        var nota3 = window.document.getElementById("inotas3");
-        var resultadoAtual = window.document.getElementById("resultado");
-        var res = (parseFloat(nota1.value) + parseFloat(nota2.value) + parseFloat(nota3.value)) / 3;
+  <script>
+    function calculate() {
+      var nota1 = window.document.getElementById("inotas1");
+      var nota2 = window.document.getElementById("inotas2");
+      var nota3 = window.document.getElementById("inotas3");
+      var resultadoAtual = window.document.getElementById("resultado");
+      var res = (parseFloat(nota1.value) + parseFloat(nota2.value) + parseFloat(nota3.value)) / 3;
 
-        if (res > 7) {
-          resultadoAtual.innerHTML =
-            "sua nota foi " + res.toFixed(1) + ", parabéns, você foi <strong>aprovado</strong>";
-        } else {
-          resultadoAtual.innerHTML =
-            "sua nota foi " + res.toFixed(1) +", você foi <strong>reprovado</strong>, precisa estudar mais";
-        }
+      if (res > 7) {
+        resultadoAtual.innerHTML =
+          "sua nota foi " + res.toFixed(1) + ", parabéns, você foi <strong>aprovado</strong>";
+      } else {
+        resultadoAtual.innerHTML =
+          "sua nota foi " + res.toFixed(1) + ", você foi <strong>reprovado</strong>, precisa estudar mais";
       }
-    </script>
-  </body>
+    }
+  </script>
+</body>
+
 </html>

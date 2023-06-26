@@ -23,13 +23,13 @@
             var numeroTres = document.getElementById('inumerotres')
             let largest = document.getElementById('resposta')
 
-            if (numeroDois.value > numeroUm.value && numeroTres.value > numeroDois.value) {
-                largest.innerHTML = `O maior número é ${numeroTres.value}`
-            } else if (numeroTres.value > numeroDois.value && numeroUm.value > numeroTres.value) {
+            if (numeroUm.value > numeroDois.value && numeroUm.value > numeroTres.value) {
                 largest.innerHTML = `O maior número é ${numeroUm.value}`
-            } else if (numeroUm.value > numeroTres.value && numeroDois.value > numeroUm.value) {
+            } else if (numeroDois.value > numeroUm.value && numeroDois.value > numeroTres.value) {
                 largest.innerHTML = `O maior número é ${numeroDois.value}`
-            } else if (numeroUm.value == numeroTres.value){
+            } else if (numeroTres.value > numeroUm.value && numeroTres.value > numeroDois.value) {
+                largest.innerHTML = `O maior número é ${numeroTres.value}`
+            } else {
                 largest.innerHTML = "Os números são iguais.";
 
             }

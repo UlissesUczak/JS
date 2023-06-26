@@ -1,38 +1,78 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vogal ou Consoante</title>
-  </head>
-  <body>
-    <h1>Descubra se é vogal ou consoante</h1>
 
-    <p>
-      Insira a letra no campo abaixo para descobrir se é vogal ou consoante.
-    </p>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vogal ou Consoante</title>
+  <style>
+    * {
+      margin: 0px;
+      padding: 0px;
+    }
+
+    h1 {
+      font-family: Arial, Helvetica, sans-serif;
+      text-align: center;
+      padding: 15px;
+
+    }
+
+    p {
+      font-family: Arial, Helvetica, sans-serif;
+      text-align: center;
+
+    }
+
+    div {
+      display: grid;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+      margin: 20px;
+      display: block;
+
+    }
+
+    button {
+      width: 80px;
+      margin: auto;
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Descubra se é vogal ou consoante</h1>
+
+  <p>
+    Insira a letra no campo abaixo para descobrir se é vogal ou consoante.
+  </p>
+  <div>
 
     <input type="text" name="letras" id="iletras" maxlength="1" />
-    <button type="submit" onclick="verificar()">Verificar</button>
-    <div id="res"></div>
+  </div>
+  <button type="submit" onclick="verificar()">Verificar</button>
+  <div id="res"></div>
 
-    <script>
-      function verificar() {
-        var alfabeto = window.document.getElementById("iletras");
-        var res = window.document.getElementById("res");
-        res.innerHTML = `A letra ${alfabeto.value} é uma `;
-        if (
-          alfabeto.value == "a" ||
-          alfabeto.value == "e" ||
-          alfabeto.value == "i" ||
-          alfabeto.value == "o" ||
-          alfabeto.value == "u"
-        ) {
-          res.innerHTML += `<strong>vogal</strong>`;
-        } else {
-          res.innerHTML += `<strong>consoante</strong>`;
-        }
+  <script>
+    function verificar() {
+      var alfabeto = window.document.getElementById("iletras");
+      var res = window.document.getElementById("res");
+      res.innerHTML = `A letra ${alfabeto.value} é uma `;
+      if (
+        alfabeto.value == "a" ||
+        alfabeto.value == "e" ||
+        alfabeto.value == "i" ||
+        alfabeto.value == "o" ||
+        alfabeto.value == "u"
+      ) {
+        res.innerHTML += `<strong>vogal</strong>`;
+      } else {
+        res.innerHTML += `<strong>consoante</strong>`;
       }
-    </script>
-  </body>
+    }
+  </script>
+</body>
+
 </html>
