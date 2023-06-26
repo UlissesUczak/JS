@@ -5,16 +5,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Maior número</title>
+
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        body {
+            text-align: center;
+            
+        }
+
+        h1 {
+            padding: 10px;
+        }
+
+        div {
+            margin: 20px;
+        }
+
+
+
+
+
+
+    </style>
 </head>
 
 <body>
     <h1>Insira 3 valores</h1>
-    <p>Assim mostrarei qual é o maior</p>
-    <input type="number" name="numeroum" id="inumeroum" step="1">
-    <input type="number" name="numerodois" id="inumerodois" step="1">
-    <input type="number" name="numerotres" id="inumerotres" step="1">
-    <div id="resposta"> Resultado: </div>
-    <input type="submit" value="Enviar" onclick="verify()">
+    <p>Assim mostrarei qual é o maior.</p>
+    <div>
+        <input type="number" name="numeroum" id="inumeroum" step="1">
+        <input type="number" name="numerodois" id="inumerodois" step="1">
+        <input type="number" name="numerotres" id="inumerotres" step="1">
+        <div id="resposta"> Resultado: </div>
+        <input type="submit" value="Enviar" onclick="verify()">
+    </div>
 
     <script>
         function verify() {
