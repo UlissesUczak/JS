@@ -3,11 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Troca</title>
 </head>
 <body>
 
+    <h1>Insira os valores abaixo para realizar a troca</h1>
+
+    <div>
+        <input type="number" name="inputnum" id="inputum">
+        <input type="number" name="unputnum" id="inputdois">
+
+    <input type="button" value="Realizar troca" onclick="trocar()">
     
+    <script>
+        function trocar() {
+
+            var numeroUm = window.document.getElementById('inputum')
+            var numeroDois = window.document.getElementById('inputdois')
+            let numUm = Number(numeroUm.value)
+            let numDois = Number(numeroDois.value)
+
+            var aux = numUm
+
+            numUm = numDois
+            numDois=aux
+
+            window.alert(`Antes\n ${numDois}\n ${numUm}\n Depois:\n ${numUm}\n ${numDois}`)
+
+
+
+
+
+
+        }
+
+
+
+    </script>
     
 </body>
 </html>
